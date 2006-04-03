@@ -1,0 +1,22 @@
+diff -u nsc/nsc.pl nsc/nsc.pl
+--- nsc/nsc.pl	2006-04-03 09:37:59.021030551 +0300
++++ nsc/nsc.pl	2006-04-03 09:39:23.852917638 +0300
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ #
+ # nsc.pl - curses-based tty console monitor for Nagios
+ # 000206shj 
+@@ -352,9 +352,9 @@
+ 
+ my %NSC_KEYWORDS = (
+ 
+-   'nslog',          '/usr/local/nagios/var/status.log',
+-   'hostcfg',        '/usr/local/nagios/etc/services.cfg',
+-   'reloadcmd',      '/etc/rc.d/init.d/nagios reload',
++   'nslog',          '/var/log/nagios/nagios.log',
++   'hostcfg',        '/etc/nagios/services.cfg',
++   'reloadcmd',      '/sbin/service nagios reload',
+    'showall',        '1',
+    'details',        '1',
+    'reverse',        '0',
