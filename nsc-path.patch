@@ -14,7 +14,7 @@ diff -u nsc/nsc.pl nsc/nsc.pl
 -   'nslog',          '/usr/local/nagios/var/status.log',
 -   'hostcfg',        '/usr/local/nagios/etc/services.cfg',
 -   'reloadcmd',      '/etc/rc.d/init.d/nagios reload',
-+   'nslog',          '/var/log/nagios/nagios.log',
++   'nslog',          '/var/lib/nagios/status.dat',
 +   'hostcfg',        '/etc/nagios/services.cfg',
 +   'reloadcmd',      '/sbin/service nagios reload',
     'showall',        '1',
