@@ -1,5 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Nagios Console Monitor
+Summary(pl):	Konsola monitoruj±ca dla Nagiosa
 Name:		nagios-nsc
 Version:	0.80
 Release:	0.2
@@ -8,7 +9,7 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/nsc-gothix/nsc-%{version}-2.tar.gz
 # Source0-md5:	fec6de9a07d8b1b2f5fd106d7fc8a5ed
 Patch0:		nsc-path.patch
-URL:		http://sourceforge.net/projects/nsc-gothix
+URL:		http://sourceforge.net/projects/nsc-gothix/
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -17,6 +18,12 @@ nsc is a curses-based tty/console monitor for Nagios v1/v2. It allows
 you to monitor Nagios services without the expense or availability of
 a GUI and features a full-screen realtime colourized display of Nagios
 service status.
+
+%description -l pl
+nsc to oparty na curses dzia³aj±cy na konsoli/terminalu monitor dla
+Nagiosa v1/v2. Pozwala monitorowaæ us³ugi Nagiosa bez kosztu lub
+dostêpno¶ci GUI, oferuje pe³noekranowy, kolorowy podgl±d w czasie
+rzeczywistym stanu us³ug Nagiosa.
 
 %prep
 %setup -q -n nsc
