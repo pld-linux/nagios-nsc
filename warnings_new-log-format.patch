@@ -1,0 +1,40 @@
+diff -upr nsc./nsc.pl nsc/nsc.pl
+--- nsc./nsc.pl	2010-08-20 13:57:43.838078051 +0200
++++ nsc/nsc.pl	2010-08-20 14:13:06.066919197 +0200
+@@ -990,7 +990,7 @@ sub getServiceList {
+ 
+    foreach my $r (@{$statuslog->{rows}}) {
+       my $t = $r->{'type'};   # || fatal("item has no type...\n" . Dumper($r));
+-      if ($t eq 'SERVICE') {
++      if (defined $t && $t eq 'SERVICE') {
+          push(@res, $r);
+       }
+    } #foreach @ol
+Only in nsc: nsc.pl~
+diff -upr nsc./nsc_nagios.pm nsc/nsc_nagios.pm
+--- nsc./nsc_nagios.pm	2005-05-23 22:34:03.000000000 +0200
++++ nsc/nsc_nagios.pm	2010-08-20 14:08:19.951986358 +0200
+@@ -41,10 +41,10 @@ our @v2_HstateMap = (
+ # Maps Nagios2 status.log types to Nagios1/nsc types
+ # Also used for ignoring unknown/unused types
+ our $v2_typeMap = {
+-   'host'      => 'HOST',
+-   'service'   => 'SERVICE',
+-   'info'      => 'INFO',
+-   'program'   => 'PROGRAM',
++   'hoststatus'      => 'HOST',
++   'servicestatus'   => 'SERVICE',
++   'info'            => 'INFO',
++   'programstatus'   => 'PROGRAM',
+ }; 
+ 
+ 
+@@ -543,6 +543,7 @@ sub load {
+ 
+    # --- count states & acknowledged stuff
+    foreach my $row (@{ $this->{rows} }) {
++      $row->{'type'} = '?type?' unless defined $row->{'type'};
+       if ($row->{'type'} eq 'SERVICE') {
+          $this->{sState}->{$row->{status}}++;
+          if ($row->{ack}) {
+Only in nsc: nsc_nagios.pm~
