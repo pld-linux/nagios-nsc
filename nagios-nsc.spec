@@ -3,14 +3,16 @@ Summary:	Nagios Console Monitor
 Summary(pl.UTF-8):	Konsola monitorująca dla Nagiosa
 Name:		nagios-nsc
 Version:	0.80
-Release:	1
+Release:	2
 License:	Artistic
 Group:		Applications
 Source0:	http://dl.sourceforge.net/nsc-gothix/nsc-%{version}-2.tar.gz
 # Source0-md5:	fec6de9a07d8b1b2f5fd106d7fc8a5ed
 Patch0:		nsc-path.patch
+Patch1:		warnings_new-log-format.patch
 URL:		http://sourceforge.net/projects/nsc-gothix/
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,6 +30,7 @@ rzeczywistym stanu usług Nagiosa.
 %prep
 %setup -q -n nsc
 %patch0 -p1
+%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
