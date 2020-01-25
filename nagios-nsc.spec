@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Nagios Console Monitor
 Summary(pl.UTF-8):	Konsola monitorująca dla Nagiosa
 Name:		nagios-nsc
