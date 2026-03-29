@@ -2,7 +2,7 @@ Summary:	Nagios Console Monitor
 Summary(pl.UTF-8):	Konsola monitorująca dla Nagiosa
 Name:		nagios-nsc
 Version:	0.80
-Release:	2
+Release:	3
 License:	Artistic
 Group:		Applications
 Source0:	http://dl.sourceforge.net/nsc-gothix/nsc-%{version}-2.tar.gz
